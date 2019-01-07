@@ -11,7 +11,8 @@
 .sts4-cache
 
 ### IntelliJ IDEA ###
-.idea
+.idea/
+.mvn/
 *.iws
 *.iml
 *.ipr
@@ -23,3 +24,8 @@
 /dist/
 /nbdist/
 /.nb-gradle/
+
+*.log
+target/
+*.cmd
+mvnw
