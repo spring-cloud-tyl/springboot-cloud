@@ -34,7 +34,7 @@ public class ElasticsearchTest {
     TeacherRepository teacherRepository;
 
     @Test
-    public void test(){
+    public void test() {
         School s1 = new School();
         s1.setId(UUID.randomUUID().toString());
         s1.setName("华东师范大学");
@@ -186,7 +186,6 @@ public class ElasticsearchTest {
         System.out.println(string);
 
     }
-
 
 
 }

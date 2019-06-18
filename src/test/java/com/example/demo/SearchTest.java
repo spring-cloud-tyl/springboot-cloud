@@ -2,26 +2,16 @@ package com.example.demo;
 
 import com.alibaba.fastjson.JSONObject;
 import com.example.demo.elasticsearch.model.School;
-import com.example.demo.elasticsearch.model.Student;
 import com.example.demo.elasticsearch.model.Teacher;
 import com.example.demo.elasticsearch.repository.TeacherRepository;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.test.context.junit4.SpringRunner;
 
 import javax.annotation.Resource;
-import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.Future;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
 import java.util.stream.Stream;
 
 /**
@@ -46,7 +36,7 @@ public class SearchTest {
         // List<Teacher> teacherList = teacherRepository.findBySchoolName("清华大学");
         // long count = teacherRepository.count();
         teacherRepository.findBySchoolName("清华大学");
-       // Page<Teacher> teacher = teacherRepository.findByName("张老师", PageRequest.of(1, 10));
+        // Page<Teacher> teacher = teacherRepository.findByName("张老师", PageRequest.of(1, 10));
         Stream<Teacher> teacherStream = teacherRepository.streamAllByAge(32);
         Future<Teacher> teachers = teacherRepository.findByName("张老师");
         Teacher teacher = teachers.get();

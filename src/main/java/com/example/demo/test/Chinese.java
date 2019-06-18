@@ -7,7 +7,7 @@ import com.example.demo.annotation.Person;
  * @description
  * @createdate 11/01/2018
  */
-@Person(name = "zhouxiangru",age = 24)
+@Person(name = "zhouxiangru", age = 24)
 public class Chinese {
 
 

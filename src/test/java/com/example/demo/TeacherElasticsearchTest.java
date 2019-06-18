@@ -57,9 +57,9 @@ public class TeacherElasticsearchTest {
             }
         }
         }*/
-        QueryBuilder queryBuilder = QueryBuilders.termQuery("sex","女");
-        QueryBuilder filterBuilder = QueryBuilders.termQuery("school.name","清华大学");
-        SearchQuery searchQuery = new NativeSearchQuery(queryBuilder,filterBuilder);
+        QueryBuilder queryBuilder = QueryBuilders.termQuery("sex", "女");
+        QueryBuilder filterBuilder = QueryBuilders.termQuery("school.name", "清华大学");
+        SearchQuery searchQuery = new NativeSearchQuery(queryBuilder, filterBuilder);
         Iterable<Teacher> search = teacherElasticsearchRepository.search(searchQuery);
         search.forEach(teacher -> System.out.println(teacher.getName()));
 
@@ -97,10 +97,10 @@ public class TeacherElasticsearchTest {
         }
         }*/
         BoolQueryBuilder boolQueryBuilder = QueryBuilders.boolQuery();
-        boolQueryBuilder.must(QueryBuilders.termQuery("school.name","清"));
-        boolQueryBuilder.must(QueryBuilders.termQuery("school.name","华"));
-        boolQueryBuilder.must(QueryBuilders.termQuery("school.name","大"));
-        boolQueryBuilder.must(QueryBuilders.termQuery("school.name","学"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("school.name", "清"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("school.name", "华"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("school.name", "大"));
+        boolQueryBuilder.must(QueryBuilders.termQuery("school.name", "学"));
         Iterable<Teacher> search = teacherElasticsearchRepository.search(boolQueryBuilder);
         search.forEach(teacher -> System.out.println(teacher.getName()));
 
@@ -112,7 +112,7 @@ public class TeacherElasticsearchTest {
         Iterable<Teacher> search1 = teacherElasticsearchRepository.search(nestedQueryBuilder);
         search1.forEach(teacher -> System.out.println(teacher.getName()));
 
-        QueryBuilder queryBuilder1 = QueryBuilders.termQuery("sex","女");
+        QueryBuilder queryBuilder1 = QueryBuilders.termQuery("sex", "女");
         AvgAggregationBuilder avgAggregationBuilder = AggregationBuilders.avg("avg_age").field("age");
         NativeSearchQuery nativeSearchQuery = new NativeSearchQuery(queryBuilder1);
         nativeSearchQuery.addAggregation(avgAggregationBuilder);

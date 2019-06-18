@@ -8,7 +8,7 @@ import org.springframework.data.elasticsearch.repository.ElasticsearchRepository
  * @description
  * @createdate 12/09/2018
  */
-public interface TeacherElasticsearchRepository extends ElasticsearchRepository<Teacher,String> {
+public interface TeacherElasticsearchRepository extends ElasticsearchRepository<Teacher, String> {
 
 
 }

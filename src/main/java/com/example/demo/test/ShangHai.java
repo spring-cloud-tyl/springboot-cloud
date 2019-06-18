@@ -7,7 +7,7 @@ import com.example.demo.annotation.Province;
  * @description
  * @createdate 11/01/2018
  */
-@Province(name = "上海",code = "001")
+@Province(name = "上海", code = "001")
 public class ShangHai {
 
     private String address;

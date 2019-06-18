@@ -14,53 +14,55 @@ import java.util.stream.Stream;
  * @description
  * @createdate 12/09/2018
  */
-public interface TeacherRepository extends BaseRepository<Teacher,String> {
+public interface TeacherRepository extends BaseRepository<Teacher, String> {
 
 
-   /**
-    * 直接属性查询
-    * @return
-    */
+    /**
+     * 直接属性查询
+     *
+     * @return
+     */
 
-   //List<Teacher> findByName(String name);
+    //List<Teacher> findByName(String name);
 
-   long count();
+    long count();
 
-   List<Teacher> findByNameAndAge(String name,int age);
+    List<Teacher> findByNameAndAge(String name, int age);
 
-   List<Teacher> findByAgeGreaterThan(int age);
+    List<Teacher> findByAgeGreaterThan(int age);
 
-   /**
-    * 间接属性查询
-    * @return
-    */
-   List<Teacher> findBySchoolName(String name);
+    /**
+     * 间接属性查询
+     *
+     * @return
+     */
+    List<Teacher> findBySchoolName(String name);
 
 
-   /**
-    * 分页、排序
-    */
+    /**
+     * 分页、排序
+     */
 
-   //Page<Teacher> findByName(String name, Pageable pageable);
+    //Page<Teacher> findByName(String name, Pageable pageable);
 
-   Page<Teacher> findFirst10ByName(String name, Pageable pageable);
+    Page<Teacher> findFirst10ByName(String name, Pageable pageable);
 
-   /**
-    * 流式查询
-    */
+    /**
+     * 流式查询
+     */
 
-   Stream<Teacher> streamAllByAge(int age);
+    Stream<Teacher> streamAllByAge(int age);
 
   /* @Query("select t from Teacher t")
    Page<Teacher> findByName(String name, Pageable pageable);
 */
 
-   /**
-    * 异步查询
-    */
+    /**
+     * 异步查询
+     */
 
-   @Async
-   Future<Teacher> findByName(String name);
+    @Async
+    Future<Teacher> findByName(String name);
 
 
 }

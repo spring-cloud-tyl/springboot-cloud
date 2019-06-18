@@ -8,5 +8,4 @@ package com.example.demo.elasticsearch.service;
 public interface BookService {
 
 
-
 }

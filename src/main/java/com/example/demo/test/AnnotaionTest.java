@@ -14,10 +14,10 @@ public class AnnotaionTest {
     public static void main(String[] args) {
         Class<Chinese> chineseClass = Chinese.class;
         Person person = chineseClass.getAnnotation(Person.class);
-        System.out.println(person.name()+"---"+person.skinColor()+"---"+person.age()+"\n");
+        System.out.println(person.name() + "---" + person.skinColor() + "---" + person.age() + "\n");
 
         Class<ShangHai> shangHaiClass = ShangHai.class;
         Province province = shangHaiClass.getAnnotation(Province.class);
-        System.out.println(province.name()+"----"+province.code());
+        System.out.println(province.name() + "----" + province.code());
     }
 }

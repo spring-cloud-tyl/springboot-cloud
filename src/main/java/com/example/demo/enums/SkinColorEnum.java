@@ -10,8 +10,7 @@ public enum SkinColorEnum {
 
     HEIZHONGREN("黑种人"),
 
-    BAIZHONGREN("白种人")
-    ;
+    BAIZHONGREN("白种人");
 
     private String color;
 

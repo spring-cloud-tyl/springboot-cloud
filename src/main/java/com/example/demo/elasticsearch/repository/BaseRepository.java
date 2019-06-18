@@ -12,7 +12,7 @@ import java.util.Optional;
  * @createdate 12/09/2018
  */
 @NoRepositoryBean
-public interface BaseRepository<T,ID extends Serializable> extends Repository<T, ID> {
+public interface BaseRepository<T, ID extends Serializable> extends Repository<T, ID> {
 
     Optional<T> findById(ID id);
 
